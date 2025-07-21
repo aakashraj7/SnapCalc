@@ -1,6 +1,7 @@
 let expression = [];
 let equals = [];
-let display = document.getElementById("display")
+let display = document.getElementById("display");
+let Status = false;
 document.addEventListener("keydown", function(event){
     if(event.key === "Enter" || event.key === '='){
         var current = document.getElementById('bequal');
@@ -78,6 +79,10 @@ function delItem(){
     display.value = temp.slice(0,(temp.length)-1)
 }
 function num(n){
+    if(Status){
+        display.value = ''
+        Status = false
+    }
     if(display.value === "Syntax Error" || display.value === '0'){
         display.value = n
     }else if(n === '0'){
@@ -129,6 +134,8 @@ function calcu(){
             if(expression.at(-1) === equals.at(-1)){
                 expression.pop();
                 equals.pop()
+            }else{
+                Status = true;
             }
             updateHistory()
             appearHistroy()
