@@ -80,18 +80,18 @@ body{
     justify-content: space-around;
     align-items: center;
 }
-.contain h1{
+.contain h1, .bmi-contain h1{
     font-size: 3rem;
     color: darkblue;
     text-align: center;
     letter-spacing: 2.6px;
 }
-.contain h3{
+.contain h3, .bmi-contain h3{
     text-align: center;
     font-size: 1.5rem;
     color: blue;
 }
-.contain p{
+.contain p, .bmi-contain p{
     margin-top: 3rem;
 }
 .contain button{
@@ -118,7 +118,7 @@ body{
         transform: rotate(0);
     }
 }
-.contain button:hover{
+.contain button:hover, .bmi-contain button:hover{
     background: purple;
     box-shadow: none;
     color: whitesmoke;
@@ -154,5 +154,51 @@ body{
     to{
         opacity: 1;
         transform: translate(0);
+    }
+}
+.bmi-glancer{
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    height: 80dvh;
+}
+.img-contain img{
+    border-radius: 50%;
+    width: 30dvw;
+    margin-left: 2rem;
+}
+.bmi-contain{
+    width: 54dvw;
+    transform: translateY(-90px);
+}
+.bmi-contain h1{
+    text-align: center;
+}
+.bmi-contain button{
+    margin-top: 3rem;
+    margin-left: 17rem;
+    font-size: 1rem;
+    padding: .6rem;
+    cursor: pointer;
+    border: none;
+    background: #224;
+    color: aliceblue;
+    border-radius: 2rem;
+    transition: all 2s;
+    box-shadow: 0 0 40px blueviolet;
+}
+.bmi-animation{
+    animation: bmiAni both;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    transform: scale(0);
+    animation-timeline: view();
+    animation-range: 1px cover 30dvh;
+}
+@keyframes bmiAni {
+    to{
+        transform: scale(1);
     }
 }

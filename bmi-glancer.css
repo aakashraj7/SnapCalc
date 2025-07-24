@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+body{
+    min-width: 100dvw;
+    min-height: 100dvh;
+    overflow: hidden;
+    background: linear-gradient(to bottom left, #223, #222);
+    background-repeat: no-repeat;
+}
+button{
+    cursor: pointer;
+}
+.gradient-sphere{
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    z-index: -2;
+    opacity: 0;
+}
+.sphere-1{
+    width: 32rem;
+    height: 32rem;
+    background: radial-gradient(darkblue,#223,darkblue);
+    top: -7rem;
+    left: 2rem;
+    animation: glitterNglow both;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    opacity: .5;
+}
+.sphere-2{
+    width: 32rem;
+    height: 32rem;
+    background: radial-gradient(purple,#223,purple);
+    bottom: -3rem;
+    right: 1.5rem;
+    animation: glitterNglow both;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-delay: 3s;
+    opacity: .5;
+}
+@keyframes glitterNglow {
+    to{
+        opacity: 1;
+    }
+}
+h1{
+    text-align: center;
+    margin-top: .8rem;
+    color: aliceblue;
+    letter-spacing: 5px;
+    font-size: 3rem;
+    margin-bottom: .5 rem;
+    animation: firstAppear both;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    transform: scale(0) rotate(45deg);
+}
+.top-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.main-cont{
+    margin-top: 1rem;
+    width: auto;
+    padding: 2rem;
+    border-radius: 3rem;
+    min-height: auto;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(100px);
+    box-shadow: 0 0 8px lightblue;
+    border: .5px solid #222;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: firstAppear both;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-delay: .5s;
+    transform: scale(0) rotate(45deg);
+}
+@keyframes firstAppear {
+    to{
+        transform: scale(1) rotate(0);
+    }
+}
+.measurement-switch{
+    border-radius: .8rem;
+    padding: .8rem;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    align-items: center;
+    justify-content: space-between;
+    animation: secondAppear both;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 1.7s;
+    transform: scale(0);
+}
+@keyframes secondAppear {
+    to{
+        transform: scale(1);
+    }
+}
+.msr-title{
+    color: lightyellow;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 1.3rem;
+}
+.options{
+    display: flex;
+    min-width: 22dvw;
+    align-items: center;
+    justify-content: space-around;
+}
+.horizontal{
+    margin: .7rem auto;
+    border-radius: 10rem;
+    animation: rulerAppear both;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    width: 0;
+}
+@keyframes rulerAppear {
+    to{
+        width: 52dvw;
+    }
+}
+.options h4{
+    letter-spacing: 1px;
+    cursor: pointer;
+    padding: .4rem;
+    border-radius: 2rem;
+    transition: 1s all;
+}
+.measurement-active{
+    color: #223;
+    background: lightyellow;
+    box-shadow: 0 0 1px blue;
+}
+.measurement-inactive{
+    color: lightyellow;
+}
+.measurement-inactive:hover{
+    box-shadow: 0 0 100px blue;
+}
+.height-weight{
+    display: grid;
+    padding: .8rem;
+    grid-template-columns: 1fr 1fr;
+    width: 50dvw;
+    animation: secondAppear both;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 1.7s;
+    transform: scale(0);
+}
+.HWtitle{
+    color: aliceblue;
+    text-align: center;
+    letter-spacing: 2px;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+.splitter{
+    width: 50dvw;
+}
+.height-cont, .weight-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+input{
+    background: transparent;
+    border: 1px solid aliceblue;
+    border-radius: 2rem;
+    outline: none;
+    width: 20dvw;
+    color: whitesmoke;
+    padding: .3rem .8rem .3rem 1rem;
+}
+.bmi-btn{
+    margin-top: 1.3rem;
+    margin-bottom: 1.3rem;
+    box-shadow: 0 0 90px rgba(173, 216, 230,.6);
+    border-radius: 2rem;
+    padding: .6rem;
+    border: none;
+    color: #223;
+    background: aliceblue;
+    font-size: .9rem;
+    font-weight: 800;
+    transition: 1s all;
+    animation: secondAppear both;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 1.7s;
+    transform: scale(0);
+}
+.bmi-btn:hover, .ret-btn:hover{
+    box-shadow: 0 0 60px darkblue;
+}
+.back-btn{
+    margin-top: 2rem;
+    padding: .2rem .6rem .2rem .6rem;
+    font-size: 1.1em;
+    background: purple;
+    color: violet;
+    cursor: pointer;
+    border-radius: 1rem;
+    box-shadow: 0 0 40px violet;
+    border: 1px solid violet;
+    animation-name: suddenAppear;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    transition: 2s all;
+    animation: firstAppear both;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    transform: scale(0) rotate(45deg);
+}
+.back-btn:hover{
+    background: violet;
+    color: purple;
+    box-shadow: 0 0 80px purple;
+}
+.rpt-title{
+    color: #faebd7;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    text-align: center;
+}
+.hwr{
+    display: flex;
+    min-width: 50dvw;
+    justify-content: space-around;
+    align-items: center;
+}
+.bmi-report{
+    padding-bottom: 1.2rem;
+}
+.vertical{
+    height: 2px;
+    background: lightyellow;
+    border-radius: 5rem;
+    animation: verticalAppear both;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    width: 0;
+    transform: rotate(0);
+}
+@keyframes verticalAppear {
+    to{
+        transform: rotate(90deg);
+        width: 3dvw;
+    }
+}
+.hd h3, .bd h3{
+    padding-top: 1rem;
+    color: aliceblue;
+}
+.bmi-ans{
+    min-width: 50dvw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.bmi-ans h2:nth-child(2n){
+    color: lightgreen;
+}
+.bmi-ans h2:nth-child(2n+1){
+    color: aqua;
+}
+.first{
+    display: flex;
+    justify-content: space-evenly;
+    width: 50dvw;
+}
+table, th{
+    border: 1px solid pink;
+}
+table{
+    padding: .4rem;
+    border-collapse: collapse;
+}
+th{
+    color: aliceblue;
+    padding: .6rem;
+}
+.ret-btn{
+    padding: .3rem;
+    font-size: 1.1em;
+    background: aliceblue;
+    color: #223;
+    cursor: pointer;
+    border-radius: 1rem;
+    box-shadow: 0 0 90px rgba(173, 216, 230,.6);
+    border: 1px solid #223;
+    transition: all 1s;
+}
+.scaler{
+    animation: secondAppear both;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 1.7s;
+    transform: scale(0);
+}
+.message{
+    padding: .6rem;
+    text-align: center;
+    border-radius: 2rem;
+    border: 1px solid blue;
+    color: blue;
+    background: whitesmoke;
+    box-shadow: 0 0 30px aquamarine;
+    position: absolute;
+    top: 2rem;
+    right: 1rem;
+    animation: msgAppear both;
+    animation-duration: 1s;
+    z-index: 10;
+    animation-fill-mode: forwards;
+}
+@keyframes msgAppear {
+    from{
+        right: -6rem;
+    }
+}

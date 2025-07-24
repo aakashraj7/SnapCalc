@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMIGlancer | BMI Calculator</title>
+    <link rel="icon" href="Assets/Images/bmi-logo.png">
+    <link rel="stylesheet" href="bmi-glancer.css">
+</head>
+<body>
+    <div class="gradient-sphere sphere-1"></div>
+    <div class="gradient-sphere sphere-2"></div>
+    <div class="message" style="display: none;">Smaple</div>
+    <div class="top-container">
+        <h1>BMIGlancer</h1>
+        <div class="main-cont matric" id="mainCont">
+            <hr class="horizontal">
+            <div class="measurement-switch">
+                <h4 class="msr-title">Measurement</h4>
+                <div class="options">
+                    <h4 onclick="toMatric()" class="measurement-active" id="matric">Matric</h4>
+                    <h4 onclick="toStandard()" id="standard" class="measurement-inactive">Standard</h4>
+                </div>
+            </div>
+            <hr class="horizontal">
+            <div class="height-weight">
+                <div class="height-cont">
+                    <h3 class="HWtitle">Height</h3>
+                    <input id="heightInput" class="feet" type="text" placeholder="In Centimeters">
+                    <input class="inch" style="display: none; margin-top: .4rem;" type="text" placeholder="In Inches">
+                </div>
+                <div class="weight-cont">
+                    <h3 class="HWtitle">Weight</h3>
+                    <input id="weightInput" type="text" placeholder="In Kilograms">
+                </div>
+            </div>
+            <button onclick="calcBMI()" class="bmi-btn">Calculate BMI</button>
+            <hr  class="horizontal">
+        </div>
+        <a id="returnSnap" href="index.html#bmiCalc"><button class="back-btn">Return to SnapCalc</button></a>
+        <div class="bmi-report main-cont" style="display: none;">
+            <hr class="horizontal">
+            <h2 class="rpt-title scaler">BMI Report</h2>
+            <hr class="horizontal">
+            <div class="hwr">
+                <div class="hd scaler">
+                    <h3>Height</h3>
+                    <h3>Weight</h3>
+                </div>
+                <hr class="vertical">
+                <div class="bd scaler">
+                    <h3 id="ansHeight">0 Cemtimeters</h3>
+                    <h3 id="ansWeight">0 Kilograms</h3>
+                </div>
+            </div>
+            <hr class="horizontal">
+            <div class="bmi-ans">
+                <div class="first scaler">
+                    <h2 class="rpt-title">Your BMI is</h2>
+                    <h2 class="rpt-title" id="finalAns">00.0</h2>
+                </div>
+                <div class="first scaler">
+                    <h2 class="rpt-title">Your Category</h2>
+                    <h2 class="rpt-title" id="finalCat">Healthy</h2>
+                </div>
+                <hr class="horizontal">
+                <table class="scaler">
+                    <tr>
+                        <th style="color: gold;">BMI Range</th>
+                        <th class="huw">Below 18</th>
+                        <th class="hh">18.5 - 24.9</th>
+                        <th class="how">25.0 - 29.9</th>
+                        <th class="ho">Above 30.0</th>
+                    </tr>
+                    <tr>
+                        <th style="color: gold;">BMI Category</th>
+                        <th class="vuw">Under Weight</th>
+                        <th class="vh">Healthy</th>
+                        <th class="vow">Over Weight</th>
+                        <th class="vo">Obesity</th>
+                    </tr>
+                </table>
+                <hr class="horizontal">
+                <button onclick="goBack()" class="ret-btn">Back</button>
+            </div>
+        </div>
+    </div>
+    <script src="bmi-glancer.js" defer></script>
+</body>
+</html>
