@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whenify | Date Operations Performer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="whenify.css">
+    <link rel="icon" href="Assets/Images/whenify-icon.png">
+</head>
+<body>
+    <div class="msg" style="display: none;"></div>
+    <div class="top-container">
+        <h1>Whenify - Date Operations Performer</h1>
+        <div class="styler age-calc">
+            <div class="options">
+                <h3 onclick="theSameClick(event)" class="selected">Age Calculator</h3>
+                <h3 onclick="toDateDifference()">Date Difference Calc</h3>
+                <h3 onclick="toLeapFinder()">Leap Year Finder</h3>
+            </div>
+            <div class="get-input">
+                <i class="fa-solid fa-calendar-week"></i>
+                <input id="acInput" type="date">
+            </div>
+            <button onclick="calcAgeCalculator(event)" style="color: yellow;">Calculate</button>
+        </div>
+        <div class="styler date-difference" style="display: none;">
+            <div class="options">
+                <h3 onclick="toAgeCalc()">Age Calculator</h3>
+                <h3 onclick="theSameClick(event)" class="selected">Date Difference Calc</h3>
+                <h3 onclick="toLeapFinder()">Leap Year Finder</h3>
+            </div>
+            <div class="get-input">
+                <i>Start</i>
+                <input id="stDt" type="date">
+                <i>End</i>
+                <input id="endDt" type="date">
+            </div>
+            <button onclick="calcAgeDifference(event)" style="color: yellow;">Calculate</button>
+        </div>
+        <div class="styler leap-finder" style="display: none;">
+            <div class="options">
+                <h3 onclick="toAgeCalc()">Age Calculator</h3>
+                <h3 onclick="toDateDifference()">Date Difference Calc</h3>
+                <h3 onclick="theSameClick(event)" class="selected">Leap Year Finder</h3>
+            </div>
+            <div class="get-input">
+                <i class="fa-solid fa-calendar-week"></i>
+                <input type="text" id="year" placeholder="Enter Year Here ...">
+            </div>
+            <button onclick="calcLeapFinder(event)" style="color: yellow;">Check</button>
+        </div>
+        <div class="styler result-leap" style="display: none;">
+            <div class="options opt-res">
+                <h3 class="selected">Leap Finder</h3>
+            </div>
+            <div class="con">
+                <h3 id="gnYear"></h3>
+                <h2 class="res-head"></h2>
+            </div>
+            <button onclick="backLeapFinder()" style="color: aquamarine;">Back</button>
+        </div>
+        <div class="styler result-age" style="padding-bottom: 1rem; display: none;">
+            <div class="options opt-res">
+                <h3 class="selected">Age Calculator</h3>
+            </div>
+            <div class="age-res">
+                <div class="header">Date of Birth</div>
+                <div class="ans" id="Dob">Answer</div>
+                <div class="header">Day of Week Born</div>
+                <div class="ans" id="bornDay">Answer</div>
+                <div class="header">Normal Age </div>
+                <div class="ans" id="normalAge">Answer</div>
+                <div class="header">Accurate Age</div>
+                <div class="ans" id="accurateAge">Answer</div>
+                <div class="header">Total Months</div>
+                <div class="ans" id="totalMonths">Answer</div>
+                <div class="header">Total Weeks</div>
+                <div class="ans" id="totalWeeks">Answer</div>
+                <div class="header">Total Days</div>
+                <div class="ans" id="totalDays">Answer</div>
+                <div class="header">Days left for Next Birdhday</div>
+                <div class="ans" id="daysLeft">Answer</div>
+            </div>
+            <button onclick="backAgeCalculator()" style="color: aquamarine;">Back</button>
+        </div>
+        <div class="styler result-diff" style="padding-bottom: 1rem; display: none;">
+            <div class="options opt-res">
+                <h3 class="selected">Age Difference Calc</h3>
+            </div>
+            <div class="age-res">
+                <div class="header">Start Date</div>
+                <div class="ans" id="StartDate">Answer</div>
+                <div class="header">End Date</div>
+                <div class="ans" id="EndDate">Answer</div>
+                <div class="header">Day Difference</div>
+                <div class="ans" id="dayDifference">Answer</div>
+                <div class="header">Exact Week Difference</div>
+                <div class="ans" id="exactWeekDifference">Answer</div>
+                <div class="header">Week Difference</div>
+                <div class="ans" id="weekDifference">Answer</div>
+                <div class="header">Exact Month Difference</div>
+                <div class="ans" id="exactMonthDifference">Answer</div>
+                <div class="header">Month Difference</div>
+                <div class="ans" id="monthDifference">Answer</div>
+                <div class="header">Exact Year Difference</div>
+                <div class="ans" id="exactYearDifference">Answer</div>
+                <div class="header">Year Difference</div>
+                <div class="ans" id="yearDifference">Answer</div>
+            </div>
+            <button onclick="backAgeDifference()" style="color: aquamarine; margin-top: .2rem;">Back</button>
+        </div>
+        <a href="index.html#whenifyCalc"><button class="back-btn">Back to SnapCalc</button></a>
+    </div>
+    <script src="whenify.js" defer></script>
+</body>
+</html>

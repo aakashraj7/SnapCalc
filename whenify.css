@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+@media (max-width: 480px){
+   .top-container h1{
+    font-size: 20px;
+   }
+   .styler{
+    max-width: 450px;
+   }
+   .options{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 420px;
+    gap: 45px !important;
+   }
+   .options h3{
+    font-size: 15px;
+   }
+   input[type='date']{
+    font-size: 12px !important;
+    letter-spacing: 2px !important;
+   }
+   .get-input i{
+    font-size: 15px;
+   }
+   .styler button{
+    font-size: 18px;
+   }
+}
+body{
+    min-height: 100dvh;
+    min-width: 100dvw;
+    background-color: rgb(29, 76, 148);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+.top-container{
+    min-height: 95dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+h1{
+    color: lightgreen;
+    letter-spacing: 2px;
+    animation: appearStart both;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.styler{
+    background:  rgb(29, 76, 148);
+    min-width: 60dvw;
+    min-height: auto;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1.4rem;
+    padding-bottom: 3rem;
+    gap: 3rem;
+    box-shadow: -3px -3px 5px rgb(48, 104, 188), 3px 3px 15px #00000070;
+    animation: appearStart both;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes appearStart {
+    from{
+        transform: scale(0) translateY(-1000px);
+        filter: blur(20px) brightness(50%);
+    }
+}
+.options{
+    color: lightblue;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 1rem;
+    padding: .9rem;
+    gap: 4.9rem;
+    box-shadow: inset -3px -3px 5px rgb(48, 104, 188), inset 3px 3px 15px #00000070;
+}
+.selected{
+    color: aqua;
+    background:  rgb(29, 76, 148);
+    box-shadow: -3px -3px 5px rgb(48, 104, 188), 3px 3px 15px #00000070;
+    padding: .6rem;
+    border-radius: 1rem;
+}
+.options h3{
+    cursor: pointer;
+}
+.get-input{
+    background:  rgb(29, 76, 148);
+    box-shadow: inset -3px -3px 5px rgb(48, 104, 188), inset 3px 3px 15px #00000070;
+    display: grid;
+    grid-template-columns: .5fr 4fr;
+    gap: 1rem;
+    justify-content: space-between;
+    padding: .8rem 1.4rem .8rem 1.4rem;
+    border-radius: 2rem;
+    align-items: center;
+}
+.get-input i{
+    background:  rgb(29, 76, 148);
+    box-shadow: -3px -3px 5px rgb(48, 104, 188), 3px 3px 15px #00000070;
+    padding: .7rem;
+    color: aquamarine;
+    border-radius: 50%;
+    text-align: center;
+}
+.back-btn, button{
+    padding: .4rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    font-size: 1rem;
+    font-weight: 590;
+    letter-spacing: 1px;
+    border: none;
+    color: pink;
+    cursor: pointer;
+    border-radius: 2rem;
+    background:  rgb(29, 76, 148);
+    box-shadow: -3px -3px 5px rgb(48, 104, 188), 3px 3px 15px #00000070;
+}
+.back-btn{
+    animation: appearStart both;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+input[type="date"]{
+    background:  rgb(29, 76, 148);
+    box-shadow: -3px -3px 5px rgb(48, 104, 188), 3px 3px 15px #00000070;
+    border: none;
+    padding: .3rem;
+    color: aquamarine;
+    font-size: 1rem;
+    width: 30dvw;
+    font-weight: 900;
+    outline: none;
+    text-align: center;
+    letter-spacing: 5px;
+    border-radius: 2rem;
+}
+input[type='text']{
+    border: none;
+    background:  rgb(29, 76, 148);
+    box-shadow: inset -3px -3px 5px rgb(48, 104, 188), inset 3px 3px 15px #00000070;
+    padding: .4rem;
+    border-radius: 2rem;
+    color: aquamarine;
+    text-align: center;
+    outline: none;
+    width: 20dvw;
+}
+input::placeholder{
+    padding-left: .8rem;
+    color: aquamarine;
+    font-weight: 550;
+    letter-spacing: 2px;
+}
+.con h2, .con h3{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.con h3{
+    color: coral;
+    letter-spacing: 2px;
+}
+.res-head{
+    background:  rgb(29, 76, 148);
+    box-shadow: inset -3px -3px 5px rgb(48, 104, 188), inset 3px 3px 15px #00000070;
+    padding: .7rem;
+    border-radius: 2rem;
+    color: gold;
+    letter-spacing: 3px;
+}
+.msg{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: .5rem .9rem .5rem .9rem;
+    border-radius: 2rem;
+    color: antiquewhite;
+    min-width: 10dvw;
+    background:  rgb(29, 76, 148);
+    box-shadow: inset -3px -3px 5px rgb(48, 104, 188), inset 3px 3px 15px #00000070;
+    animation: msg-ani both;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    z-index: 10;
+}
+@keyframes msg-ani{
+    from{
+        right: -10rem;
+    }
+}
+.opt-res h3{
+    letter-spacing: 2px;
+}
+.age-res{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background:  rgb(29, 76, 148);
+    border-radius: 2rem;
+    padding: .4rem;
+    padding-left: .8rem;
+    font-size: 1.2rem;
+    column-gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 750;
+    letter-spacing: 2px;
+    box-shadow: inset -3px -3px 5px rgb(48, 104, 188), inset 3px 3px 15px #00000070;
+}
+.age-res div{
+    padding: .4rem;
+}
+.ans{
+    color: yellow;
+}
+.header{
+    color: coral;
+}
+.result-diff{
+    gap: 1.2rem;
+}
