@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch It | SnapCalc</title>
+    <link rel="stylesheet" href="switch-it.css">
+    <link rel="stylesheet" href="si-matricMagic.css">
+</head>
+<body>
+    <div class="main-container">
+        <h1 class="large-title">Switch It</h1>
+        <div class="whole-container enter-cont">
+            <div class="options">
+                <h3 class="o-header">Choices</h3>
+                <a href="si-thermify.html"><h4>Thermify</h4></a>
+                <h4>CoinShift</h4>
+            </div>
+            <div class="contents">
+                <h2>MatricMagic</h2>
+                <div class="choice-cont">
+                    <div class="choice">
+                        <div onclick="pageChanger('Length / Distance Conversion')" onmouseenter="onHoverNum(event, true)" onmouseleave="onHoverNum(event, false)" class="num">1</div>
+                        <div onclick="pageChanger('Length / Distance Conversion')" onmouseenter="onHoverDes(event, true)" onmouseleave="onHoverDes(event, false)" class="des">Length / Distance Conversion</div>
+                    </div>
+                    <div class="choice">
+                        <div onclick="pageChanger('Mass / Weight Conversion')" onmouseenter="onHoverNum(event, true)" onmouseleave="onHoverNum(event, false)" class="num">2</div>
+                        <div onclick="pageChanger('Mass / Weight Conversion')" onmouseenter="onHoverDes(event, true)" onmouseleave="onHoverDes(event, false)" class="des">Mass / Weight Conversion</div>
+                    </div>
+                    <div class="choice">
+                        <div onmouseenter="onHoverNum(event, true)" onmouseleave="onHoverNum(event, false)" class="num">3</div>
+                        <div onmouseenter="onHoverDes(event, true)" onmouseleave="onHoverDes(event, false)" class="des">Volume / Capacity Conversion</div>
+                    </div>
+                    <div class="choice">
+                        <div onmouseenter="onHoverNum(event, true)" onmouseleave="onHoverNum(event, false)" class="num">4</div>
+                        <div onmouseenter="onHoverDes(event, true)" onmouseleave="onHoverDes(event, false)" class="des">Area Conversion</div>
+                    </div>
+                    <div class="choice">
+                        <div onmouseenter="onHoverNum(event, true)" onmouseleave="onHoverNum(event, false)" class="num">5</div>
+                        <div onmouseenter="onHoverDes(event, true)" onmouseleave="onHoverDes(event, false)" class="des">Time Conversion</div>
+                    </div>
+                    <div class="choice">
+                        <div onmouseenter="onHoverNum(event, true)" onmouseleave="onHoverNum(event, false)" class="num">6</div>
+                        <div onmouseenter="onHoverDes(event, true)" onmouseleave="onHoverDes(event, false)" class="des">Speed Conversion</div>
+                    </div>
+                </div>   
+            </div>
+        </div>
+        <div class="whole-container result" style="display: none;">
+            <h1 class="res-h1">Conversion Title</h1>
+            <div class="spliter">
+                <div class="res-col getting">
+                    <h3>From</h3>
+                    <div class="inner-options">
+                        <div class="combined">
+                            <input type="radio" id="blah">
+                            <label for="blah">Blah</label>
+                        </div>
+                        <div class="combined">
+                            <input type="radio" id="blah">
+                            <label for="blah">Blah</label>
+                        </div>
+                        <div class="combined">
+                            <input type="radio" id="blah">
+                            <label for="blah">Blah</label>
+                        </div>
+                        <div class="combined">
+                            <input type="radio" id="blah">
+                            <label for="blah">Blah</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="res-col setting">
+                    <h3>To</h3>
+                    <div class="inner-options">
+                        <div class="combined">
+                            <input type="radio" id="blah">
+                            <label for="blah">Blah</label>
+                        </div>
+                        <div class="combined">
+                            <input type="radio" id="blah">
+                            <label for="blah">Blah</label>
+                        </div>
+                        <div class="combined">
+                            <input type="radio" id="blah">
+                            <label for="blah">Blah</label>
+                        </div>
+                        <div class="combined">
+                            <input type="radio" id="blah">
+                            <label for="blah">Blah</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="display-format from-display">
+                    <input type="text" placeholder="Use Keyboard" class="displayer inputter" readonly>
+                    <div class="unit-from">Unit</div>
+                </div>
+                <div class="display-format to-display">
+                    <div class="displayer output" style="display: flex; justify-content: center; align-items: center;">---</div>
+                    <div class="unit-to">Unit</div>
+                </div>
+            </div>
+            <button onclick="goBack()">Back</button>
+        </div>
+        <a class="back-btn" href="index.html#switch-it">Back to Snapcalc</a>
+    </div>
+    <script src="switch-it.js" defer></script>
+    <script src="si-matricMagic.js" defer></script>
+</body>
+</html>

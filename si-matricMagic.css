@@ -1,0 +1,110 @@
+.res-h1{
+    background: rgb(30, 41, 59);
+    padding: .8rem;
+    border-radius: 2rem;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    color: chocolate;
+}
+.large-title{
+    padding-bottom: 0;
+}
+.result{
+    justify-content: flex-start;
+    margin-top: 1.2rem;
+    margin-bottom: 2.5rem;
+}
+.spliter{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+}
+.res-col{
+    min-width: 25dvw;
+    border-radius: 2rem;
+    background: rgb(30, 41, 59);
+    padding: 1rem;
+}
+.res-col h3{
+    color: aqua;
+    font-size: 1.3rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.res-col .inner-options{
+    display: grid;
+    margin-top: 1rem;
+    grid-template-columns: 1fr 1fr;
+    min-width: 22dvw;
+    justify-content: center;
+    gap: 1.2rem;
+    align-items: center;
+}
+.combined{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .2rem;
+}
+.combined label{
+    color: violet;
+    font-family: 700;
+    font-size: 1.2rem;
+}
+.display-format{
+    min-width: 12.5dvw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.4rem;
+}
+.display-format .displayer{
+    padding: .3rem;
+    background: aliceblue;
+    width: fit-content;
+    min-height: 2.4rem;
+    font-weight: 700;
+    font-size: 1.3rem;
+    border-radius: 1rem;
+    box-shadow: 25px 25px 75px rgba(30, 41, 59,0.25), 
+    10px 10px 70px rgba(30, 41, 59,0.25), 
+    inset 5px 5px 10px rgba(30, 41, 59,0.5), 
+    inset 5px 5px 20px rgba(147, 197, 253,0.2), 
+    inset -5px -5px 15px rgba(30, 41, 59,0.75);
+}
+.display-format .unit-from, .unit-to{
+    font-size: 1.4rem;
+    padding-left: .5rem;
+    color: yellow;
+}
+.from-display input{
+    border: none;
+    width: fit-content;
+    outline: none;
+}
+.from-display input[type="text"]{
+    padding-left: 1rem;
+}
+.from-display input::placeholder{
+    text-align: center;
+}
+.combined input[type="radio"]{
+    accent-color: aqua;
+}
+.result button{
+    border-radius: 1rem;
+    border: none;
+    padding: .5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    background: aquamarine;
+    color: blue;
+    box-shadow: 25px 25px 75px rgba(30, 41, 59,0.25), 
+    10px 10px 70px rgba(30, 41, 59,0.25), 
+    inset 5px 5px 10px rgba(30, 41, 59,0.5), 
+    inset 5px 5px 20px rgba(147, 197, 253,0.2), 
+    inset -5px -5px 15px rgba(30, 41, 59,0.75);
+}
