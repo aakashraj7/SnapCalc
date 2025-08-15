@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch It | SnapCalc</title>
+    <link rel="stylesheet" href="switch-it.css">
+    <link rel="stylesheet" href="si-thermify.css">
+</head>
+<body>
+    <div class="main-container">
+        <h1 class="main-title">Switch It</h1>
+        <div class="whole-container selection">
+            <div class="options">
+                <h3 class="o-header">Other Units</h3>
+                <h4>MetricMagic</h4>
+                <h4>CoinShift</h4>
+            </div>
+            <div class="contents">
+                <h2>Thermify</h2>
+                <div class="choice-cont">
+                    <div class="choice">
+                        <div onclick="changePage('Celcius','Kelvin')" onmouseenter="onHoverNum(event, true)" onmouseleave="onHoverNum(event, false)" class="num">1</div>
+                        <div onclick="changePage('Celcius','Kelvin')" onmouseenter="onHoverDes(event, true)" onmouseleave="onHoverDes(event, false)" class="des">Celsius → Kelvin</div>
+                    </div>
+                    <div class="choice">
+                        <div onclick="changePage('Kelvin','Celcius')" onmouseenter="onHoverNum(event, true)" onmouseleave="onHoverNum(event, false)" class="num">2</div>
+                        <div onclick="changePage('Kelvin','Celcius')" onmouseenter="onHoverDes(event, true)" onmouseleave="onHoverDes(event, false)" class="des">Kelvin → Celsius</div>
+                    </div>
+                    <div class="choice">
+                        <div onclick="changePage('Celcius','Farenheit')" onmouseenter="onHoverNum(event, true)" onmouseleave="onHoverNum(event, false)" class="num">3</div>
+                        <div onclick="changePage('Celcius','Farenheit')" onmouseenter="onHoverDes(event, true)" onmouseleave="onHoverDes(event, false)" class="des">Celsius → Farenheit</div>
+                    </div>
+                    <div class="choice">
+                        <div onclick="changePage('Farenheit','Celcius')" onmouseenter="onHoverNum(event, true)" onmouseleave="onHoverNum(event, false)" class="num">4</div>
+                        <div onclick="changePage('Farenheit','Celcius')" onmouseenter="onHoverDes(event, true)" onmouseleave="onHoverDes(event, false)" class="des">Farenheit → Celsius</div>
+                    </div>
+                    <div class="choice">
+                        <div onclick="changePage('Kelvin','Farenheit')" onmouseenter="onHoverNum(event, true)" onmouseleave="onHoverNum(event, false)" class="num">5</div>
+                        <div onclick="changePage('Kelvin','Farenheit')" onmouseenter="onHoverDes(event, true)" onmouseleave="onHoverDes(event, false)" class="des">Kelvin → Farenheit</div>
+                    </div>
+                    <div class="choice">
+                        <div onclick="changePage('Farenheit','Kelvin')" onmouseenter="onHoverNum(event, true)" onmouseleave="onHoverNum(event, false)" class="num">6</div>
+                        <div onclick="changePage('Farenheit','Kelvin')" onmouseenter="onHoverDes(event, true)" onmouseleave="onHoverDes(event, false)" class="des">Farenheit → Kelvin</div>
+                    </div>
+                </div>   
+            </div>
+        </div>
+        <div class="whole-container result" style="display: none;">
+            <h1 class="res-h1">Here Goes Title</h1>
+            <div class="res-col">
+                <h4 class="from-header">From Meausure</h4>
+                <input type="text" id="givenInput" placeholder="Use Keyboard Numbers" readonly>
+            </div>
+            <div class="res-col">
+                <h4 class="to-header">To Measure</h4>
+                <h4 class="to-res">---</h4>
+            </div>
+            <button onclick="returnBack()">Back</button>
+        </div>
+        <a class="back-btn" href="index.html#switch-it">Back to Snapcalc</a>
+    </div>
+    <script src="switch-it.js" defer></script>
+    <script src="si-thermify.js" defer></script>
+</body>
+</html>
