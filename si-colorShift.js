@@ -400,7 +400,12 @@ function convertIt(){
         if(!isCombinedUnit){
             document.querySelector('.combined-unit').placeholder = `rgb(${temp[0]},${temp[1]},${temp[2]})`;
         }
-        document.querySelector('.color-box').style.background = document.querySelector('.combined-unit').placeholder;
+        document.querySelector('.color-box').style.background = resDisplayer.innerHTML;
+        if(toUnit === 'CMYK' && !isCombinedUnit){
+            document.querySelector('.color-box').style.background = document.querySelector('.combined-unit').placeholder;
+        }else{
+            document.querySelector('.color-box').style.background = document.querySelector('.combined-unit').value;
+        }
     }else if(fromUnit === 'HSL'){
         let hueValue = document.querySelector('#hueInput').value;
         let saturationValue = document.querySelector('#saturationInput').value;
@@ -427,7 +432,12 @@ function convertIt(){
         if(!isCombinedUnit){
             document.querySelector('.combined-unit').placeholder = `hsl(${temp[0]},${temp[1]},${temp[2]})`;
         }
-        document.querySelector('.color-box').style.background = document.querySelector('.combined-unit').placeholder;
+        document.querySelector('.color-box').style.background = resDisplayer.innerHTML;
+        if(toUnit === 'CMYK' && !isCombinedUnit){
+            document.querySelector('.color-box').style.background = document.querySelector('.combined-unit').placeholder;
+        }else{
+            document.querySelector('.color-box').style.background = document.querySelector('.combined-unit').value;
+        }
     }else if(fromUnit === 'CMYK'){
         let cyanValue = document.querySelector('#cyanInput').value;
         let magentaValue = document.querySelector('#magentaInput').value;
