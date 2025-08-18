@@ -4,6 +4,17 @@ let lengthMap = {'Kilometer':'km','Meter':'m','Centimeter':'cm','Millimeter':'mm
 let massOptions = ['Kilogram','Gram','Milligram','Pound','Ounce','Metric ton'];
 let massMap = {'Kilogram':'kg','Gram':'g','Milligram':'mg','Pound':'lb','Ounce':'oz','Metric ton':'t'};
 
+let volumeOptions = ['Liter','Gallon','Fluid ounce','Cup'];
+let volumeMap = {'Liter':'l','Gallon':'gal','Fluid ounce':'fl oz','Cup':'cup'};
+
+let areaOptions = ['Square meter','Hectare','Acre'];
+let areaMap = {'Square meter':'m**2','Hectare':'ha','Acre':'acre'};
+
+let speedOptions = ['Meters per second','Kilometers per hour','Miles per hour','Feet per second','Centimeters per second','Inches per second'];
+let speedMap = {'Meters per second':'m/s','Kilometers per hour':'km/h','Miles per hour':'mph','Feet per second':'ft/s','Centimeters per second':'cm/s','Inches per second':'in/s'};
+
+let timeOptions = ['Hour','Minute','Second','Millisecond','Microsecond','Nanosecond'];
+let timeMap = {'Hour':'h','Minute':'min','Second':'sec','Millisecond':'ms','Microsecond':'µs','Nanosecond':'ns'};
 
 let mainCont = document.querySelector('.enter-cont');
 let resCont = document.querySelector('.result');
@@ -18,6 +29,14 @@ gnInput.addEventListener('input',function(){
         which = 'length';
     }else if(conversionTitle.innerHTML === "Mass / Weight Conversion"){
         which = 'mass';
+    }else if(conversionTitle.innerHTML === "Volume / Capacity Conversion"){
+        which = 'volume';
+    }else if(conversionTitle.innerHTML === "Area Conversion"){
+        which = 'area';
+    }else if(conversionTitle.innerHTML === "Speed Conversion"){
+        which = 'speed';
+    }else if(conversionTitle.innerHTML === "Time Conversion"){
+        which = 'time';
     }
     execution(which)
 });
@@ -27,6 +46,14 @@ document.addEventListener('keydown',function(event){
         which = 'length';
     }else if(conversionTitle.innerHTML === "Mass / Weight Conversion"){
         which = 'mass';
+    }else if(conversionTitle.innerHTML === "Volume / Capacity Conversion"){
+        which = 'volume';
+    }else if(conversionTitle.innerHTML === "Area Conversion"){
+        which = 'area';
+    }else if(conversionTitle.innerHTML === "Speed Conversion"){
+        which = 'speed';
+    }else if(conversionTitle.innerHTML === "Time Conversion"){
+        which = 'time';
     }
     if(mainCont.style.display === 'none'){
         if(['1','2','3','4','5','6','7','8','9','0','.'].includes(event.key)){
@@ -50,6 +77,22 @@ function fromToUpdate(decider){
         requiredOptions = [...massOptions];
         requiredMap = structuredClone(massMap);
         which = 'mass';
+    }else if(decider === "Volume / Capacity Conversion"){
+        requiredOptions = [...volumeOptions];
+        requiredMap = structuredClone(volumeMap);
+        which = 'volume';
+    }else if(decider === "Area Conversion"){
+        requiredOptions = [...areaOptions];
+        requiredMap = structuredClone(areaMap);
+        which = 'area';
+    }else if(decider === "Speed Conversion"){
+        requiredOptions = [...speedOptions];
+        requiredMap = structuredClone(speedMap);
+        which = 'speed';
+    }else if(decider === "Time Conversion"){
+        requiredOptions = [...timeOptions];
+        requiredMap = structuredClone(timeMap);
+        which = 'time';
     }
     //Creating 'from' inner-options container
     let innerOptions = document.createElement('div');
@@ -223,7 +266,7 @@ function execution(which){
             }
         }else if(which === 'mass'){
             if(fromUnit === toUnit){
-                if(outputter.innerHTML === ''){
+                if(gnInput.value === ''){
                     outputter.innerHTML = '---';
                 }else{
                     outputter.innerHTML = gnInput.value;
@@ -288,6 +331,194 @@ function execution(which){
                 outputter.innerHTML = ((gnInput.value * 1000) * 2.2046226218).toFixed(2);
             }else if(fromUnit === 'Metric ton' && toUnit === 'Ounce'){
                 outputter.innerHTML = ((gnInput.value * 1000) * 35.27396195).toFixed(2);
+            }
+        }else if(which === 'volume'){
+            if(fromUnit === toUnit){
+                if(gnInput.value === ''){
+                    outputter.innerHTML = '---';
+                }else{
+                    outputter.innerHTML = gnInput.value;
+                }
+            }else if(fromUnit === 'Liter' && toUnit === 'Gallon'){
+                outputter.innerHTML = (gnInput.value / 3.78541).toFixed(2);
+            }else if(fromUnit === 'Liter' && toUnit === 'Fluid ounce'){
+                outputter.innerHTML = (gnInput.value / 0.0295735).toFixed(2);
+            }else if(fromUnit === 'Liter' && toUnit === 'Cup'){
+                outputter.innerHTML = (gnInput.value / 0.24).toFixed(2);
+            }else if(fromUnit === 'Gallon' && toUnit === 'Liter'){
+                outputter.innerHTML = (gnInput.value * 3.78541).toFixed(2);
+            }else if(fromUnit === 'Gallon' && toUnit === 'Fluid ounce'){
+                outputter.innerHTML = (gnInput.value * 128).toFixed(2);
+            }else if(fromUnit === 'Gallon' && toUnit === 'Cup'){
+                outputter.innerHTML = (gnInput.value * 16).toFixed(2);
+            }else if(fromUnit === 'Fluid ounce' && toUnit === 'Liter'){
+                outputter.innerHTML = (gnInput.value * 0.0295735).toFixed(2);
+            }else if(fromUnit === 'Fluid ounce' && toUnit === 'Gallon'){
+                outputter.innerHTML = (gnInput.value / 128).toFixed(2);
+            }else if(fromUnit === 'Fluid ounce' && toUnit === 'Cup'){
+                outputter.innerHTML = (gnInput.value / 8).toFixed(2);
+            }else if(fromUnit === 'Cup' && toUnit === 'Liter'){
+                outputter.innerHTML = (gnInput.value * 0.24).toFixed(2);
+            }else if(fromUnit === 'Cup' && toUnit === 'Gallon'){
+                outputter.innerHTML = (gnInput.value / 16).toFixed(2);
+            }else if(fromUnit === 'Cup' && toUnit === 'Fluid ounce'){
+                outputter.innerHTML = (gnInput.value * 8).toFixed(2);
+            }
+        }else if(which === 'area'){
+            if(fromUnit === toUnit){
+                if(gnInput.value === ''){
+                    outputter.innerHTML = '---';
+                }else{
+                    outputter.innerHTML = gnInput.value;
+                }
+            }else if(fromUnit === 'Square meter' && toUnit === 'Hectare'){
+                outputter.innerHTML = (gnInput.value / 10_000).toFixed(2);
+            }else if(fromUnit === 'Square meter' && toUnit === 'Acre'){
+                outputter.innerHTML = (gnInput.value / 4_046.8564224).toFixed(2);
+            }else if(fromUnit === 'Hectare' && toUnit === 'Square meter'){
+                outputter.innerHTML = (gnInput.value * 10_000).toFixed(2);
+            }else if(fromUnit === 'Hectare' && toUnit === 'Acre'){
+                outputter.innerHTML = ((gnInput.value * 10_000) / 4_046.8564224).toFixed(2);
+            }else if(fromUnit === 'Acre' && toUnit === 'Square meter'){
+                outputter.innerHTML = (gnInput.value * 4_046.8564224).toFixed(2);
+            }else if(fromUnit === 'Acre' && toUnit === 'Hectare'){
+                outputter.innerHTML = ((gnInput.value * 4_046.8564224) / 10_000).toFixed(2);
+            }
+        }else if(which === 'speed'){
+            if(fromUnit === toUnit){
+                if(gnInput.value === ''){
+                    outputter.innerHTML = '---';
+                }else{
+                    outputter.innerHTML = gnInput.value;
+                }
+            }else if(fromUnit === 'Meters per second' && toUnit === 'Kilometers per hour'){
+                outputter.innerHTML = (gnInput.value / 0.277778).toFixed(2);
+            }else if(fromUnit === 'Meters per second' && toUnit === 'Miles per hour'){
+                outputter.innerHTML = (gnInput.value / 0.44704).toFixed(2);
+            }else if(fromUnit === 'Meters per second' && toUnit === 'Feet per second'){
+                outputter.innerHTML = (gnInput.value / 0.3048).toFixed(2);
+            }else if(fromUnit === 'Meters per second' && toUnit === 'Cenimeters per second'){
+                outputter.innerHTML = (gnInput.value * 100).toFixed(2);
+            }else if(fromUnit === 'Meters per second' && toUnit === 'Inches per second'){
+                outputter.innerHTML = (gnInput.value / 0.0254).toFixed(2);
+            }else if(fromUnit === 'Kilometers per hour' && toUnit === 'Meters per second'){
+                outputter.innerHTML = (gnInput.value * 0.277778).toFixed(2);
+            }else if(fromUnit === 'Kilometers per hour' && toUnit === 'Miles per hour'){
+                outputter.innerHTML = ((gnInput.value * 0.277778) / 0.44704).toFixed(2);
+            }else if(fromUnit === 'Kilometers per hour' && toUnit === 'Feet per second'){
+                outputter.innerHTML = ((gnInput.value * 0.277778) / 0.3048).toFixed(2);
+            }else if(fromUnit === 'Kilometers per hour' && toUnit === 'Centimeters per second'){
+                outputter.innerHTML = ((gnInput.value * 0.277778) * 100).toFixed(2);
+            }else if(fromUnit === 'Kilometers per hour' && toUnit === 'Inches per second'){
+                outputter.innerHTML = ((gnInput.value * 0.277778) / 0.0254).toFixed(2);
+            }else if(fromUnit === 'Miles per hour' && toUnit === 'Meters per second'){
+                outputter.innerHTML = (gnInput.value * 0.44704).toFixed(2);
+            }else if(fromUnit === 'Miles per hour' && toUnit === 'Kilometers per hour'){
+                outputter.innerHTML = ((gnInput.value * 0.44704) / 0.277778).toFixed(2);
+            }else if(fromUnit === 'Miles per hour' && toUnit === 'Feet per second'){
+                outputter.innerHTML = ((gnInput.value * 0.44704) / 0.3048).toFixed(2);
+            }else if(fromUnit === 'Miles per hour' && toUnit === 'Centimeters per second'){
+                outputter.innerHTML = ((gnInput.value * 0.44704) * 100).toFixed(2);
+            }else if(fromUnit === 'Miles per hour' && toUnit === 'Inches per second'){
+                outputter.innerHTML = ((gnInput.value * 0.44704) / 0.0254).toFixed(2);
+            }else if(fromUnit === 'Feet per second' && toUnit === 'Meters per second'){
+                outputter.innerHTML = (gnInput.value * 0.3048).toFixed(2);
+            }else if(fromUnit === 'Feet per second' && toUnit === 'Miles per hour'){
+                outputter.innerHTML = ((gnInput.value * 0.3048) / 0.44704).toFixed(2);
+            }else if(fromUnit === 'Feet per second' && toUnit === 'Centimeters per second'){
+                outputter.innerHTML = ((gnInput.value * 0.3048) * 100).toFixed(2);
+            }else if(fromUnit === 'Feet per second' && toUnit === 'Inches per second'){
+                outputter.innerHTML = ((gnInput.value * 0.3048) / 0.0254).toFixed(2);
+            }else if(fromUnit === 'Feet per second' && toUnit === 'Kilometers per hour'){
+                outputter.innerHTML = ((gnInput.value * 0.3048) / 0.277778).toFixed(2);
+            }else if(fromUnit === 'Centimeters per second' && toUnit === 'Meters per second'){
+                outputter.innerHTML = (gnInput.value / 100).toFixed(2);
+            }else if(fromUnit === 'Centimeters per second' && toUnit === 'Kilometers per hour'){
+                outputter.innerHTML = ((gnInput.value / 100) / 0.277778).toFixed(2);
+            }else if(fromUnit === 'Centimeters per second' && toUnit === 'Miles per hour'){
+                outputter.innerHTML = ((gnInput.value / 100) / 0.44704).toFixed(2);
+            }else if(fromUnit === 'Centimeters per second' && toUnit === 'Feet per second'){
+                outputter.innerHTML = ((gnInput.value / 100) / 0.3048).toFixed(2);
+            }else if(fromUnit === 'Centimeters per second' && toUnit === 'Inches per second'){
+                outputter.innerHTML = ((gnInput.value / 100) / 0.0254).toFixed(2);
+            }else if(fromUnit === 'Inches per second' && toUnit === 'Meters per second'){
+                outputter.innerHTML = (gnInput.value * 0.0254).toFixed(2);
+            }else if(fromUnit === 'Inches per second' && toUnit === 'Kilometers per hour'){
+                outputter.innerHTML = ((gnInput.value * 0.0254) / 0.277778).toFixed(2);
+            }else if(fromUnit === 'Inches per second' && toUnit === 'Miles per hour'){
+                outputter.innerHTML = ((gnInput.value * 0.0254) / 0.44704).toFixed(2);
+            }else if(fromUnit === 'Inches per second' && toUnit === 'Centimeters per second'){
+                outputter.innerHTML = ((gnInput.value * 0.0254) * 100).toFixed(2);
+            }else if(fromUnit === 'Inches per second' && toUnit === 'Feet per second'){
+                outputter.innerHTML = ((gnInput.value * 0.0254) / 0.3048).toFixed(2);
+            }
+        }else if(which === 'time'){
+            if(fromUnit === toUnit){
+                if(gnInput.value === ''){
+                    outputter.innerHTML = '---';
+                }else{
+                    outputter.innerHTML = gnInput.value;
+                }
+            }else if(fromUnit === 'Second' && toUnit === 'Hour'){
+                outputter.innerHTML = (gnInput.value / 3600).toFixed(9);
+            }else if(fromUnit === 'Second' && toUnit === 'Minute'){
+                outputter.innerHTML = (gnInput.value / 60).toFixed(9);
+            }else if(fromUnit === 'Second' && toUnit === 'Millisecond'){
+                outputter.innerHTML = (gnInput.value * 1000).toFixed(9);
+            }else if(fromUnit === 'Second' && toUnit === 'Microsecond'){
+                outputter.innerHTML = (gnInput.value * 1_000_000).toFixed(9);
+            }else if(fromUnit === 'Second' && toUnit === 'Nanosecond'){
+                outputter.innerHTML = (gnInput.value * 1_000_000_000).toFixed(9);
+            }else if(fromUnit === 'Hour' && toUnit === 'Second'){
+                outputter.innerHTML = (gnInput.value * 3600).toFixed(9);
+            }else if(fromUnit === 'Hour' && toUnit === 'Minute'){
+                outputter.innerHTML = (gnInput.value * 60).toFixed(9);
+            }else if(fromUnit === 'Hour' && toUnit === 'Millisecond'){
+                outputter.innerHTML = (gnInput.value * 3_600_000).toFixed(9);
+            }else if(fromUnit === 'Hour' && toUnit === 'Microsecond'){
+                outputter.innerHTML = (gnInput.value * 3_600_000_000).toFixed(9);
+            }else if(fromUnit === 'Hour' && toUnit === 'Nanosecond'){
+                outputter.innerHTML = (gnInput.value * 3_600_000_000_000).toFixed(9);
+            }else if(fromUnit === 'Minute' && toUnit === 'Second'){
+                outputter.innerHTML = (gnInput.value * 60).toFixed(9);
+            }else if(fromUnit === 'Minute' && toUnit === 'Hour'){
+                outputter.innerHTML = (gnInput.value / 60).toFixed(9);
+            }else if(fromUnit === 'Minute' && toUnit === 'Millisecond'){
+                outputter.innerHTML = (gnInput.value * 60_000).toFixed(9);
+            }else if(fromUnit === 'Minute' && toUnit === 'Microsecond'){
+                outputter.innerHTML = (gnInput.value * 60_000_000).toFixed(9);
+            }else if(fromUnit === 'Minute' && toUnit === 'Nanosecond'){
+                outputter.innerHTML = (gnInput.value * 60_000_000_000).toFixed(9);
+            }else if(fromUnit === 'Millisecond' && toUnit === 'Second'){
+                outputter.innerHTML = (gnInput.value / 1000).toFixed(9);
+            }else if(fromUnit === 'Millisecond' && toUnit === 'Minute'){
+                outputter.innerHTML = (gnInput.value / 60_000).toFixed(9);
+            }else if(fromUnit === 'Millisecond' && toUnit === 'Hour'){
+                outputter.innerHTML = (gnInput.value / 3_600_000).toFixed(9);
+            }else if(fromUnit === 'Millisecond' && toUnit === 'Microsecond'){
+                outputter.innerHTML = (gnInput.value * 1000).toFixed(9);
+            }else if(fromUnit === 'Millisecond' && toUnit === 'Nanosecond'){
+                outputter.innerHTML = (gnInput.value * 1_000_000).toFixed(9);
+            }else if(fromUnit === 'Microsecond' && toUnit === 'Second'){
+                outputter.innerHTML = (gnInput.value / 1_000_000).toFixed(9);
+            }else if(fromUnit === 'Microsecond' && toUnit === 'Minute'){
+                outputter.innerHTML = (gnInput.value / 60_000_000).toFixed(9);
+            }else if(fromUnit === 'Microsecond' && toUnit === 'Hour'){
+                outputter.innerHTML = (gnInput.value / 3_600_000_000).toFixed(9);
+            }else if(fromUnit === 'Microsecond' && toUnit === 'Millisecond'){
+                outputter.innerHTML = (gnInput.value / 1000).toFixed(9);
+            }else if(fromUnit === 'Microsecond' && toUnit === 'Nanosecond'){
+                outputter.innerHTML = (gnInput.value * 1000).toFixed(9);
+            }else if(fromUnit === 'Nanosecond' && toUnit === 'Second'){
+                outputter.innerHTML = (gnInput.value / 1_000_000_000).toFixed(9);
+            }else if(fromUnit === 'Nanosecond' && toUnit === 'Minute'){
+                outputter.innerHTML = (gnInput.value / 60_000_000_000).toFixed(9);
+            }else if(fromUnit === 'Nanosecond' && toUnit === 'Hour'){
+                outputter.innerHTML = (gnInput.value / 3_600_000_000_000).toFixed(9);
+            }else if(fromUnit === 'Nanosecond' && toUnit === 'Millisecond'){
+                outputter.innerHTML = (gnInput.value / 1_000_000).toFixed(9);
+            }else if(fromUnit === 'Nanosecond' && toUnit === 'Microsecond'){
+                outputter.innerHTML = (gnInput.value / 1000).toFixed(9);
             }
         }
     }

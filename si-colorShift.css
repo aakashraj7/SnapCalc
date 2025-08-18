@@ -1,0 +1,109 @@
+body{
+    overflow-x: hidden;
+}
+.res-h1{
+    padding: .5rem;
+    background: rgb(30, 41, 59);
+    border-radius: 1.4rem;
+    margin-bottom: 1rem;
+}
+.result{
+    justify-content: flex-start;
+}
+.splitter{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-width: 45dvw;
+    margin: .8rem;
+    color: 2rem;
+}
+.from-container h3, .to-container h3{
+    text-align: center;
+    color: coral;
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+}
+.res-displayer{
+    border-radius: 2rem;
+    border: 3px solid aqua;
+}
+.from-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.single-elem{
+    display: grid;
+    grid-template-columns: .3fr 1fr;
+    margin: .5rem;
+}
+span{
+    font-size: 1.4rem;
+    width: 1.9rem;
+    text-align: center;
+    border-radius: 50%;
+    font-weight: 700;
+    background: aliceblue;
+}
+input{
+    width: 8rem;
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+}
+input::placeholder{
+    text-align: center;
+    font-weight: 700;
+    padding: .5rem;
+    font-size: 1.2rem;
+}
+.combined-unit{
+    width: 13rem;
+    margin: .6rem;
+    height: 2rem;
+}
+
+.res-holder{
+    min-width: 23dvw;
+    min-height: 30dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+}
+.res-displayer{
+    background: aliceblue;
+    border-radius: 2rem;
+    padding: .6rem;
+}
+.btn-cont{
+    min-width: 45dvw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.btn-cont button{
+    padding: .2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: .5rem;
+    border: none;
+    cursor: pointer;
+}
+.convert{
+    background: coral;
+    color: whitesmoke;
+}
+input[type="text"], input[type="number"]{
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+.color-box{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 1rem;
+}

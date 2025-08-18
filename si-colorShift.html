@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColorShift | Switch It</title>
+    <link rel="stylesheet" href="switch-it.css">
+    <link rel="stylesheet" href="si-colorShift.css">
+    <link rel="icon" href="Assets/Images/switch-it.png">
+</head>
+<body>
+    <div class="main-container">
+        <h1 class="top-heading">Switch It</h1>
+        <div class="whole-container great-container">
+            <div class="options">
+                <h3 class="o-header">Choices</h3>
+                <a href="si-matricMagic.html"><h4>MetricMagic</h4></a>
+                <a href="si-thermify.html"><h4>Thermify</h4></a>
+            </div>
+            <div class="contents">
+                <h2>Color Shift</h2>
+                <div class="choice-cont">
+                    <div class="choice">
+                        <div onclick="pageChanger('Hex','RGB')" onmouseenter="onHoverNum(event, true)" onmouseleave="onHoverNum(event, false)" class="num">1</div>
+                        <div onclick="pageChanger('Hex','RGB')" onmouseenter="onHoverDes(event, true)" onmouseleave="onHoverDes(event, false)" class="des">Hex → RGB</div>
+                    </div>
+                    <div class="choice">
+                        <div onclick="pageChanger('Hex','HSL')" onmouseenter="onHoverNum(event, true)" onmouseleave="onHoverNum(event, false)" class="num">2</div>
+                        <div onclick="pageChanger('Hex','HSL')" onmouseenter="onHoverDes(event, true)" onmouseleave="onHoverDes(event, false)" class="des">Hex → HSL</div>
+                    </div>
+                    <div class="choice">
+                        <div onclick="pageChanger('Hex','CMYK')" onmouseenter="onHoverNum(event, true)" onmouseleave="onHoverNum(event, false)" class="num">3</div>
+                        <div onclick="pageChanger('Hex','CMYK')" onmouseenter="onHoverDes(event, true)" onmouseleave="onHoverDes(event, false)" class="des">Hex → CMYK</div>
+                    </div>
+                    <div class="choice">
+                        <div onclick="pageChanger('RGB','Hex')" onmouseenter="onHoverNum(event, true)" onmouseleave="onHoverNum(event, false)" class="num">4</div>
+                        <div onclick="pageChanger('RGB','Hex')" onmouseenter="onHoverDes(event, true)" onmouseleave="onHoverDes(event, false)" class="des">RGB → Hex</div>
+                    </div>
+                    <div class="choice">
+                        <div onclick="pageChanger('RGB','HSL')" onmouseenter="onHoverNum(event, true)" onmouseleave="onHoverNum(event, false)" class="num">5</div>
+                        <div onclick="pageChanger('RGB','HSL')" onmouseenter="onHoverDes(event, true)" onmouseleave="onHoverDes(event, false)" class="des">RGB → HSL</div>
+                    </div>
+                    <div class="choice">
+                        <div onclick="pageChanger('RGB','CMYK')" onmouseenter="onHoverNum(event, true)" onmouseleave="onHoverNum(event, false)" class="num">6</div>
+                        <div onclick="pageChanger('RGB','CMYK')" onmouseenter="onHoverDes(event, true)" onmouseleave="onHoverDes(event, false)" class="des">RGB → CMYK</div>
+                    </div>
+                    <div class="choice">
+                        <div onclick="pageChanger('HSL','Hex')" onmouseenter="onHoverNum(event, true)" onmouseleave="onHoverNum(event, false)" class="num">7</div>
+                        <div onclick="pageChanger('HSL','Hex')" onmouseenter="onHoverDes(event, true)" onmouseleave="onHoverDes(event, false)" class="des">HSL → Hex</div>
+                    </div>
+                    <div class="choice">
+                        <div onclick="pageChanger('HSL','RGB')" onmouseenter="onHoverNum(event, true)" onmouseleave="onHoverNum(event, false)" class="num">8</div>
+                        <div onclick="pageChanger('HSL','RGB')" onmouseenter="onHoverDes(event, true)" onmouseleave="onHoverDes(event, false)" class="des">HSL → RGB</div>
+                    </div>
+                    <div class="choice">
+                        <div onclick="pageChanger('HSL','CMYK')" onmouseenter="onHoverNum(event, true)" onmouseleave="onHoverNum(event, false)" class="num">9</div>
+                        <div onclick="pageChanger('HSL','CMYK')" onmouseenter="onHoverDes(event, true)" onmouseleave="onHoverDes(event, false)" class="des">HSL → CMYK</div>
+                    </div>
+                    <div class="choice">
+                        <div onclick="pageChanger('CMYK','Hex')" onmouseenter="onHoverNum(event, true)" onmouseleave="onHoverNum(event, false)" class="num">10</div>
+                        <div onclick="pageChanger('CMYK','Hex')" onmouseenter="onHoverDes(event, true)" onmouseleave="onHoverDes(event, false)" class="des">CMYK → Hex</div>
+                    </div>
+                    <div class="choice">
+                        <div onclick="pageChanger('CMYK','RGB')" onmouseenter="onHoverNum(event, true)" onmouseleave="onHoverNum(event, false)" class="num">11</div>
+                        <div onclick="pageChanger('CMYK','RGB')" onmouseenter="onHoverDes(event, true)" onmouseleave="onHoverDes(event, false)" class="des">CMYK → RGB</div>
+                    </div>
+                    <div class="choice">
+                        <div onclick="pageChanger('CMYK','HSL')" onmouseenter="onHoverNum(event, true)" onmouseleave="onHoverNum(event, false)" class="num">12</div>
+                        <div onclick="pageChanger('CMYK','HSL')" onmouseenter="onHoverDes(event, true)" onmouseleave="onHoverDes(event, false)" class="des">CMYK → HSL</div>
+                    </div>
+                </div>   
+            </div>
+        </div>
+        <div class="whole-container result" style="display: none;">
+            <h1 class="res-h1">Here Goes Title</h1>
+            <div class="splitter">
+                <div class="from-container">
+                    <!-- <h3 class="from-unit">From</h3>
+                    <div class="single-elem">
+                        <span style="color: red;">R</span>
+                        <input type="number" placeholder="Red">
+                    </div>
+                    <div class="single-elem">
+                        <span style="color: green">G</span>
+                        <input type="number" placeholder="Green">
+                    </div>
+                    <div class="single-elem">
+                        <span style="color: blue;">B</span>
+                        <input type="number" placeholder="Blue">
+                    </div>
+                    <input type="text" placeholder="rgb(rr,gg,bb)" class="combined-unit"> -->
+                </div>
+                <div class="to-container">
+                    <h3 class="to-unit">To</h3>
+                    <div class="res-holder">
+                        <h2 class="res-displayer">hsl(hh,ss,ll)</h2>
+                        <div class="color-box"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-cont">
+                <button onclick="convertIt()" class="convert">Convert</button>
+                <button onclick="goBack()">Back</button>
+            </div>
+        </div>
+        <a class="back-btn" href="index.html#switch-it">Back to Snapcalc</a>
+    </div>
+    <script src="switch-it.js" defer></script>
+    <script src="si-colorShift.js" defer></script>
+</body>
+</html>
